@@ -1,0 +1,128 @@
+PALIMPSEST LICENSE v0.8
+
+Copyright (c) 2025 Rhodium Pipeline Template Contributors
+
+This software is released under the Palimpsest License v0.8, which layers
+additional terms on top of a base license chosen by the user.
+
+================================================================================
+PALIMPSEST LAYER
+================================================================================
+
+1. PRESERVATION OF METHODOLOGY
+
+   Any derivative work must preserve attribution to the Rhodium Standard
+   Repositories (RSR) methodology. This includes:
+
+   a) Retaining reference to the methodology in documentation
+   b) Not claiming independent invention of the methodology's core patterns
+   c) Contributing improvements back to the community where practical
+
+2. PROOF INTEGRITY
+
+   If formal proofs (Isabelle/HOL, Lean, Coq, or similar) are included:
+
+   a) Proofs must remain verifiable with their stated proof assistant
+   b) Modifications to proofs must be clearly marked
+   c) Proof dependencies must be accurately documented
+
+3. CONFIGURATION TRANSPARENCY
+
+   Generated projects must not obscure their configuration systems:
+
+   a) Nickel contracts must remain readable (no obfuscation)
+   b) Guile schemes must remain inspectable
+   c) Build configuration must be auditable
+
+4. TOOLCHAIN DOCUMENTATION
+
+   Projects must document their complete toolchain requirements:
+
+   a) All runtime dependencies
+   b) All build-time dependencies
+   c) All proof-checking dependencies
+
+5. NO ENDORSEMENT
+
+   Use of this template does not imply endorsement by the template authors.
+   Projects may not claim certification or approval from Rhodium Pipeline
+   Template maintainers without explicit written permission.
+
+================================================================================
+BASE LICENSE SELECTION
+================================================================================
+
+This template and generated projects may be used under EITHER of the following
+base licenses, at the user's choice:
+
+Option A: MIT License (see below)
+Option B: GNU Affero General Public License v3.0 (see below)
+
+The Palimpsest Layer terms apply IN ADDITION to whichever base license is
+selected. In case of conflict, the more restrictive interpretation applies.
+
+================================================================================
+OPTION A: MIT LICENSE
+================================================================================
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+OPTION B: GNU AFFERO GENERAL PUBLIC LICENSE v3.0
+================================================================================
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License along
+with this program. If not, see <https://www.gnu.org/licenses/>.
+
+================================================================================
+CRYPTOGRAPHIC NOTICE
+================================================================================
+
+This software may include or generate code that uses cryptographic algorithms:
+
+- SHAKE3-256 (SHA-3 extendable output function)
+- BLAKE3 (cryptographic hash)
+- Ed448 (digital signatures)
+- Argon2id (key derivation)
+- Kyber1024 (post-quantum key encapsulation)
+
+Export and use of cryptographic software may be regulated in your jurisdiction.
+Users are responsible for compliance with applicable laws.
+
+================================================================================
+ATTRIBUTION
+================================================================================
+
+This template is part of the Rhodium Standard Repositories ecosystem.
+
+Reference implementation: https://gitlab.com/hyperpolymath/zerostep
+Template repository: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+Methodology documentation: See docs/HANDOVER.adoc
+
+================================================================================

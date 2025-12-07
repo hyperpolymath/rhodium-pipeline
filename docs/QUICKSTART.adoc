@@ -1,0 +1,368 @@
+= Rhodium Pipeline Template: Quick Start Guide
+:toc: macro
+:toc-title: Contents
+:toclevels: 2
+:sectnums:
+:icons: font
+:source-highlighter: rouge
+
+Get a formally-verified data pipeline running in 5 minutes.
+
+toc::[]
+
+== Prerequisites
+
+Ensure these tools are installed:
+
+[cols="1,2,2"]
+|===
+|Tool |Purpose |Install Command
+
+|Rust 1.80+
+|Core implementation
+|`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh`
+
+|cargo-generate
+|Project generation
+|`cargo install cargo-generate`
+
+|just
+|Task automation
+|`cargo install just`
+
+|Nickel
+|Type-safe configuration
+|`cargo install nickel-lang-cli`
+
+|Guile 3.0+
+|Runtime validation
+|`apt install guile-3.0` or `brew install guile`
+
+|Isabelle
+|Formal proofs
+|Download from https://isabelle.in.tum.de
+|===
+
+== Generate a New Project
+
+[source,bash]
+----
+# Generate from template
+cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+
+# Answer the prompts:
+#   Project name: my-pipeline
+#   Description: My data processing pipeline
+#   Author: Your Name
+#   Email: you@example.com
+#   License: MIT or AGPL-3.0
+#   Include Julia: no
+#   Checksum algorithm: shake256
+#   Default threads: 4
+----
+
+== Enter Your Project
+
+[source,bash]
+----
+cd my-pipeline
+
+# Verify dependencies
+just check-deps
+
+# You should see:
+# ✓ Rust OK
+# ✓ Nickel OK
+# ✓ Guile OK
+# ✓ Isabelle OK
+# All dependencies satisfied
+----
+
+== Build and Test
+
+[source,bash]
+----
+# Build the project
+just build
+
+# Run tests
+just test
+
+# Quick development cycle
+just quick
+# This runs: fmt-check → check → test-unit
+----
+
+== Verify Proofs
+
+[source,bash]
+----
+# Check all Isabelle proofs
+just prove
+
+# Quick proof check (faster)
+just prove-fast
+
+# You should see:
+# Building Isabelle session...
+# Finished MyPipeline (0:00:XX elapsed time)
+----
+
+== Run Your Pipeline
+
+[source,bash]
+----
+# Dry run (no output)
+just run-dry --input ./data --output ./results
+
+# Actual run
+just run --input ./data --output ./results
+
+# Verbose mode
+just run-verbose --input ./data --output ./results -vvv
+----
+
+== Validate Configuration
+
+[source,bash]
+----
+# Check Nickel configuration
+just validate-config
+
+# Export configuration as JSON
+just config-export
+
+# Show effective configuration
+just config-show
+----
+
+== Project Structure
+
+Your generated project:
+
+[source]
+----
+my-pipeline/
+├── Cargo.toml              # Rust dependencies
+├── src/
+│   ├── main.rs             # CLI entry point
+│   ├── cli.rs              # Argument definitions
+│   ├── pipeline.rs         # Core logic
+│   └── ...
+├── proofs/
+│   ├── ROOT                # Isabelle session
+│   ├── MyPipeline_*.thy    # Formal proofs
+├── config/
+│   ├── default.ncl         # Main configuration
+│   ├── schema.ncl          # Configuration schema
+│   └── presets.ncl         # Pre-defined presets
+├── schemes/
+│   └── config.scm          # Guile runtime config
+├── justfile                # Task automation
+└── docs/
+----
+
+== Key Commands
+
+[cols="1,2"]
+|===
+|Command |Description
+
+|`just help`
+|Show all available commands
+
+|`just quick`
+|Fast development cycle
+
+|`just full`
+|Complete validation pipeline
+
+|`just ci`
+|CI/CD pipeline checks
+
+|`just prove`
+|Verify Isabelle proofs
+
+|`just validate`
+|Validate all configurations
+
+|`just test`
+|Run all tests
+
+|`just lint`
+|Code quality checks
+
+|`just fmt`
+|Format code
+
+|`just build`
+|Development build
+
+|`just release`
+|Optimized release build
+
+|`just run`
+|Execute pipeline
+
+|`just run-dry`
+|Simulate without writing
+|===
+
+== Configuration
+
+=== Using Presets
+
+[source,bash]
+----
+# Development preset (fast, minimal validation)
+export MY_PIPELINE_PRESET=dev
+just run --input ./data --output ./results
+
+# Production preset (full validation)
+export MY_PIPELINE_PRESET=prod
+just run --input ./data --output ./results
+
+# Paranoid preset (maximum validation + proofs)
+export MY_PIPELINE_PRESET=paranoid
+just run --input ./data --output ./results
+----
+
+=== Environment Variables
+
+[source,bash]
+----
+# Override thread count
+export MY_PIPELINE_THREADS=8
+
+# Set validation level
+export MY_PIPELINE_VALIDATION=full
+
+# Enable strict mode
+export MY_PIPELINE_STRICT=true
+----
+
+=== Configuration File
+
+[source,bash]
+----
+# Initialize user config
+just config-init
+
+# Edit configuration
+$EDITOR ~/.config/my-pipeline/config.json
+----
+
+== Adding Your Logic
+
+=== 1. Define Your Data Type
+
+Edit `src/pipeline.rs`:
+
+[source,rust]
+----
+// Replace the placeholder Record type
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Record {
+    pub id: String,
+    pub field1: String,
+    pub field2: i64,
+    // Add your fields
+}
+----
+
+=== 2. Implement Transformation
+
+Edit `src/pipeline.rs`:
+
+[source,rust]
+----
+async fn transform_record(&self, record: Record) -> Result<Record> {
+    // Your transformation logic here
+    Ok(Record {
+        id: record.id,
+        field1: record.field1.to_uppercase(),
+        field2: record.field2 * 2,
+    })
+}
+----
+
+=== 3. Add Your Proofs
+
+Edit `proofs/MyPipeline_Invariants.thy`:
+
+[source,isabelle]
+----
+(* Your domain-specific invariant *)
+definition my_invariant :: "dataset \<Rightarrow> bool" where
+  "my_invariant ds \<equiv> \<forall>r \<in> ds. field2 r > 0"
+
+lemma processing_preserves_my_invariant:
+  assumes "my_invariant ds"
+  shows "my_invariant (transform ds)"
+  (* Your proof here *)
+----
+
+=== 4. Run Full Pipeline
+
+[source,bash]
+----
+# Build, test, prove, validate
+just full
+
+# If everything passes, run for real
+just run --input ./data --output ./results
+----
+
+== Troubleshooting
+
+=== Proof Fails
+
+[source,bash]
+----
+# Get detailed proof output
+isabelle build -v -d proofs/ MyPipeline
+
+# Open in Isabelle/jEdit for interactive debugging
+just prove-edit MyPipeline_Invariants
+----
+
+=== Configuration Errors
+
+[source,bash]
+----
+# Validate configuration
+nickel typecheck config/default.ncl
+
+# Show effective configuration
+just config-show
+----
+
+=== Build Errors
+
+[source,bash]
+----
+# Check without building
+just check
+
+# Verbose build
+cargo build -v
+----
+
+== Next Steps
+
+1. **Read the methodology** — link:HANDOVER.adoc[HANDOVER.adoc] explains the philosophy
+2. **Study the proofs** — Understand the invariant patterns in `proofs/`
+3. **Customize configuration** — Adjust `config/default.ncl` for your needs
+4. **Add your logic** — Implement domain-specific processing
+5. **Write your proofs** — Add invariants for your domain
+
+== Getting Help
+
+* Template repository: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+* Reference implementation: https://gitlab.com/hyperpolymath/zerostep
+* Isabelle documentation: https://isabelle.in.tum.de/documentation.html
+* Nickel documentation: https://nickel-lang.org/user-manual/
+
+---
+
+_Built with Rhodium Pipeline Template v1.0.0_
