@@ -1,0 +1,14 @@
+# Generated projects
+/test-output/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary
+*.tmp
+/tmp/
