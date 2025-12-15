@@ -1,78 +1,19 @@
-SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Palimpsest-0.5
-
-This software is dual-licensed under:
-  1. GNU Affero General Public License v3.0 or later
-  2. Palimpsest License v0.5
-
-See https://spdx.org/licenses/ for license details.
-================================================================================
-
-PALIMPSEST LICENSE v0.8
-
-Copyright (c) 2025 Rhodium Pipeline Template Contributors
-
-This software is released under the Palimpsest License v0.8, which layers
-additional terms on top of a base license chosen by the user.
+SPDX-License-Identifier: MIT OR AGPL-3.0-or-later
+SPDX-FileCopyrightText: 2024-2025 hyperpolymath
 
 ================================================================================
-PALIMPSEST LAYER
+DUAL LICENSE: MIT OR AGPL-3.0-or-later
 ================================================================================
 
-1. PRESERVATION OF METHODOLOGY
+This project is dual-licensed under the MIT License OR the GNU Affero General
+Public License v3.0 or later. You may choose to use, copy, modify, and
+distribute this work under the terms of EITHER license (your choice).
 
-   Any derivative work must preserve attribution to the Rhodium Standard
-   Repositories (RSR) methodology. This includes:
+--------------------------------------------------------------------------------
+MIT LICENSE
+--------------------------------------------------------------------------------
 
-   a) Retaining reference to the methodology in documentation
-   b) Not claiming independent invention of the methodology's core patterns
-   c) Contributing improvements back to the community where practical
-
-2. PROOF INTEGRITY
-
-   If formal proofs (Isabelle/HOL, Lean, Coq, or similar) are included:
-
-   a) Proofs must remain verifiable with their stated proof assistant
-   b) Modifications to proofs must be clearly marked
-   c) Proof dependencies must be accurately documented
-
-3. CONFIGURATION TRANSPARENCY
-
-   Generated projects must not obscure their configuration systems:
-
-   a) Nickel contracts must remain readable (no obfuscation)
-   b) Guile schemes must remain inspectable
-   c) Build configuration must be auditable
-
-4. TOOLCHAIN DOCUMENTATION
-
-   Projects must document their complete toolchain requirements:
-
-   a) All runtime dependencies
-   b) All build-time dependencies
-   c) All proof-checking dependencies
-
-5. NO ENDORSEMENT
-
-   Use of this template does not imply endorsement by the template authors.
-   Projects may not claim certification or approval from Rhodium Pipeline
-   Template maintainers without explicit written permission.
-
-================================================================================
-BASE LICENSE SELECTION
-================================================================================
-
-This template and generated projects may be used under EITHER of the following
-base licenses, at the user's choice:
-
-Option A: MIT License (see below)
-Option B: GNU Affero General Public License v3.0 (see below)
-
-The Palimpsest Layer terms apply IN ADDITION to whichever base license is
-selected. In case of conflict, the more restrictive interpretation applies.
-
-================================================================================
-OPTION A: MIT LICENSE
-================================================================================
+Copyright (c) 2024-2025 hyperpolymath
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -92,9 +33,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-================================================================================
-OPTION B: GNU AFFERO GENERAL PUBLIC LICENSE v3.0
-================================================================================
+--------------------------------------------------------------------------------
+GNU AFFERO GENERAL PUBLIC LICENSE v3.0 OR LATER
+--------------------------------------------------------------------------------
 
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU Affero General Public License as published by the Free
@@ -109,29 +50,42 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program. If not, see <https://www.gnu.org/licenses/>.
 
+The full text of the AGPL-3.0 is available at:
+  https://www.gnu.org/licenses/agpl-3.0.txt
+
+--------------------------------------------------------------------------------
+CHOOSING YOUR LICENSE
+--------------------------------------------------------------------------------
+
+You may choose to use this work under:
+  1. MIT License - Standard permissive open source license
+  2. AGPL-3.0-or-later - Copyleft license requiring source disclosure for
+     network services
+
+For most uses, MIT License provides maximum flexibility.
+For ensuring open source remains open (especially for SaaS/network services),
+AGPL-3.0-or-later provides stronger protections.
+
 ================================================================================
-CRYPTOGRAPHIC NOTICE
+PALIMPSEST PHILOSOPHICAL OVERLAY (NON-BINDING)
 ================================================================================
 
-This software may include or generate code that uses cryptographic algorithms:
+This project encourages (but does not legally require) adherence to the
+principles of the Palimpsest License - a framework for consent-based digital
+interaction and the future web.
 
-- SHAKE3-256 (SHA-3 extendable output function)
-- BLAKE3 (cryptographic hash)
-- Ed448 (digital signatures)
-- Argon2id (key derivation)
-- Kyber1024 (post-quantum key encapsulation)
+Core Principles (Encouraged):
+  - Respect for emotional and creative lineage
+  - Transparent AI training practices with explicit consent
+  - Preservation of metadata and attribution
+  - Protection of narrative intent and cultural context
 
-Export and use of cryptographic software may be regulated in your jurisdiction.
-Users are responsible for compliance with applicable laws.
+The Palimpsest principles represent our vision for a consent-based internet.
+While not legally binding for use of this software, we encourage all users
+and contributors to familiarize themselves with these principles.
+
+Learn more: https://github.com/hyperpolymath/palimpsest-license
 
 ================================================================================
-ATTRIBUTION
-================================================================================
-
-This template is part of the Rhodium Standard Repositories ecosystem.
-
-Reference implementation: https://gitlab.com/hyperpolymath/zerostep
-Template repository: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
-Methodology documentation: See docs/HANDOVER.adoc
-
+END OF LICENSE
 ================================================================================
