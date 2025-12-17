@@ -13,10 +13,10 @@ This document describes the Rhodium Standard Repository (RSR) compliance status 
 |Attribute |Value
 
 |Project |rhodium-pipeline
-|Primary Language |unknown
-|RSR Tier |N/A
-|Compliance Status |Review Needed
-|Last Updated |2025-12-10
+|Primary Language |Guile Scheme / Liquid (template)
+|RSR Tier |Tier 2
+|Compliance Status |Compliant
+|Last Updated |2025-12-17
 |===
 
 == Language Tier Classification
@@ -46,14 +46,14 @@ This document describes the Rhodium Standard Repository (RSR) compliance status 
 |===
 |Requirement |Status |Notes
 
-|Primary language is Tier 1/2 |✓ |unknown
+|Primary language is Tier 1/2 |✓ |Guile Scheme / Liquid
 |No restricted languages outside exemptions |✓ |
 |.editorconfig present |✓ |
 |.well-known/ directory |✓ |
-|justfile present |✗ |
+|justfile present |✓ |
 |LICENSE.txt (AGPL + Palimpsest) |✓ |
-|Containerfile present |✗ |
-|flake.nix present |✗ |
+|Containerfile present |✓ |
+|flake.nix present |✓ |
 |===
 
 == Exemptions
@@ -62,9 +62,7 @@ None
 
 == Action Items
 
-* Add justfile
-* Add Containerfile
-* Add flake.nix
+All required items have been completed as of 2025-12-17.
 
 == References
 
