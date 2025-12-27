@@ -6,13 +6,24 @@
 :icons: font
 :source-highlighter: rouge
 
-A methodology template for formally-verified data processing pipelines using the Rhodium Standard Repositories (RSR) methodology.
+A https://github.com/cargo-generate/cargo-generate[cargo-generate] template for formally-verified data processing pipelines using the Rhodium Standard Repositories (RSR) methodology.
 
 toc::[]
 
+== What This Is
+
+This repository is a *code generator template*, not a library or framework.
+
+[cols="1,3"]
+|===
+|Template engine |`cargo-generate` with https://shopify.github.io/liquid/[Liquid] templating
+|Output |A complete, buildable Rust project with proofs, configuration, and automation
+|Determinism |Same inputs → byte-identical output (suitable for reproducible builds)
+|===
+
 == Overview
 
-Rhodium Pipeline Template generates production-ready data processing pipelines with:
+When you run `cargo generate`, this template produces a complete project with:
 
 [cols="1,3"]
 |===
@@ -54,23 +65,37 @@ ____
 
 == Quick Start
 
+=== Interactive
+
 [source,bash]
 ----
-# Install cargo-generate if needed
-cargo install cargo-generate
-
-# Generate a new project
+cargo install cargo-generate  # if needed
 cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template
-
-# Enter project
-cd my-pipeline
-
-# Verify toolchain
-just check-deps
-
-# Build and validate
-just full
+cd my-pipeline && just check-deps && just full
 ----
+
+=== Deterministic (for CI/scripts)
+
+[source,bash]
+----
+cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+  --name my-pipeline \
+  --define project_name=my_pipeline \
+  --define ProjectName=MyPipeline \
+  --define description="My data processing pipeline" \
+  --define author="Your Name" \
+  --define email="you@example.com" \
+  --define license=MIT \
+  --define include_julia=false \
+  --define checksum_algo=blake3 \
+  --define isabelle_version=Isabelle2024 \
+  --define min_rust_version=1.75.0 \
+  --define default_threads=4 \
+  --define enable_telemetry=false \
+  --define target_platforms="linux-x86_64,macos-arm64"
+----
+
+See link:docs/QUICKSTART.adoc[QUICKSTART.adoc] for the full variable reference.
 
 == Template Variables
 
