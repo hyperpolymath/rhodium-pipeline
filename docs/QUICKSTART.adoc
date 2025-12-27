@@ -120,6 +120,102 @@ This produces byte-identical output given the same inputs. All 13 template varia
 |`target_platforms` |string |`linux-x86_64,macos-arm64,macos-x86_64`
 |===
 
+== Reference Example (Verifiable)
+
+Generate a reference pipeline to verify the template compiles and tests pass:
+
+[source,bash]
+----
+# Generate the reference project with fixed values
+cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+  --name ref-pipeline \
+  --define project_name=ref_pipeline \
+  --define ProjectName=RefPipeline \
+  --define description="Reference pipeline for verification" \
+  --define author="Test" \
+  --define email="test@example.com" \
+  --define license=MIT \
+  --define include_julia=false \
+  --define checksum_algo=blake3 \
+  --define isabelle_version=Isabelle2024 \
+  --define min_rust_version=1.75.0 \
+  --define default_threads=4 \
+  --define enable_telemetry=false \
+  --define target_platforms="linux-x86_64"
+
+cd ref-pipeline
+
+# Verify it compiles
+cargo check
+
+# Run unit tests (no external deps required)
+cargo test --lib
+
+# Build release binary
+cargo build --release
+
+# Verify CLI works
+./target/release/ref-pipeline --help
+./target/release/ref-pipeline --version
+----
+
+Expected output from `--help`:
+
+[source]
+----
+Reference pipeline for verification
+
+Usage: ref-pipeline [OPTIONS] <COMMAND>
+
+Commands:
+  run          Run the data processing pipeline
+  validate     Validate data without processing
+  config       Manage configuration
+  checksum     Checksum operations
+  completions  Generate shell completions
+  manpage      Generate man page
+  help         Print this message or the help of the given subcommand(s)
+...
+----
+cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+  --name my-pipeline \
+  --define project_name=my_pipeline \
+  --define ProjectName=MyPipeline \
+  --define description="My data processing pipeline" \
+  --define author="Your Name" \
+  --define email="you@example.com" \
+  --define license=MIT \
+  --define include_julia=false \
+  --define checksum_algo=blake3 \
+  --define isabelle_version=Isabelle2024 \
+  --define min_rust_version=1.75.0 \
+  --define default_threads=4 \
+  --define enable_telemetry=false \
+  --define target_platforms="linux-x86_64,macos-arm64"
+----
+
+This produces byte-identical output given the same inputs. All 13 template variables are:
+
+[cols="2,1,2"]
+|===
+|Variable |Type |Default
+
+|`project-name` |string |(required, via `--name`)
+|`project_name` |string |(required)
+|`ProjectName` |string |(required)
+|`description` |string |(required)
+|`author` |string |`Anonymous`
+|`email` |string |`dev@example.com`
+|`license` |choice |`AGPL-3.0` (or `MIT`)
+|`include_julia` |bool |`false`
+|`checksum_algo` |choice |`blake3`
+|`isabelle_version` |string |`Isabelle2024`
+|`min_rust_version` |string |`1.75.0`
+|`default_threads` |string |`4`
+|`enable_telemetry` |bool |`false`
+|`target_platforms` |string |`linux-x86_64,macos-arm64,macos-x86_64`
+|===
+
 == Enter Your Project
 
 [source,bash]
