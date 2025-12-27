@@ -10,6 +10,28 @@ Get a formally-verified data pipeline running in 5 minutes.
 
 toc::[]
 
+== What This Ships
+
+This repository is a *`cargo-generate` template* — a set of https://shopify.github.io/liquid/[Liquid] template files that `cargo-generate` processes to produce a complete project skeleton.
+
+[cols="1,3"]
+|===
+|What it is |A code generator template (not a library, framework, or cookiecutter)
+
+|Template engine |https://github.com/cargo-generate/cargo-generate[cargo-generate] with Liquid syntax
+
+|Output |A complete, buildable Rust project with Isabelle proofs, Nickel config, and justfile automation
+
+|Determinism |Given the same input variables, produces byte-identical output
+|===
+
+When you run `cargo generate`, the template engine:
+
+1. Prompts for variable values (or accepts them via `--define`)
+2. Substitutes `{{variable}}` placeholders throughout all template files
+3. Applies conditionals (e.g., excludes Julia files if `include_julia=false`)
+4. Writes the rendered files to your new project directory
+
 == Prerequisites
 
 Ensure these tools are installed:
@@ -45,21 +67,58 @@ Ensure these tools are installed:
 
 == Generate a New Project
 
+=== Interactive Mode
+
 [source,bash]
 ----
-# Generate from template
+# Generate from template (prompts for each variable)
 cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template
-
-# Answer the prompts:
-#   Project name: my-pipeline
-#   Description: My data processing pipeline
-#   Author: Your Name
-#   Email: you@example.com
-#   License: MIT or AGPL-3.0
-#   Include Julia: no
-#   Checksum algorithm: shake256
-#   Default threads: 4
 ----
+
+=== Deterministic Mode (Reproducible)
+
+For CI/CD, scripting, or reproducible builds, specify all variables on the command line:
+
+[source,bash]
+----
+cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+  --name my-pipeline \
+  --define project_name=my_pipeline \
+  --define ProjectName=MyPipeline \
+  --define description="My data processing pipeline" \
+  --define author="Your Name" \
+  --define email="you@example.com" \
+  --define license=MIT \
+  --define include_julia=false \
+  --define checksum_algo=blake3 \
+  --define isabelle_version=Isabelle2024 \
+  --define min_rust_version=1.75.0 \
+  --define default_threads=4 \
+  --define enable_telemetry=false \
+  --define target_platforms="linux-x86_64,macos-arm64"
+----
+
+This produces byte-identical output given the same inputs. All 13 template variables are:
+
+[cols="2,1,2"]
+|===
+|Variable |Type |Default
+
+|`project-name` |string |(required, via `--name`)
+|`project_name` |string |(required)
+|`ProjectName` |string |(required)
+|`description` |string |(required)
+|`author` |string |`Anonymous`
+|`email` |string |`dev@example.com`
+|`license` |choice |`AGPL-3.0` (or `MIT`)
+|`include_julia` |bool |`false`
+|`checksum_algo` |choice |`blake3`
+|`isabelle_version` |string |`Isabelle2024`
+|`min_rust_version` |string |`1.75.0`
+|`default_threads` |string |`4`
+|`enable_telemetry` |bool |`false`
+|`target_platforms` |string |`linux-x86_64,macos-arm64,macos-x86_64`
+|===
 
 == Enter Your Project
 
