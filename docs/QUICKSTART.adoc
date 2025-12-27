@@ -85,6 +85,7 @@ cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template 
   --name my-pipeline \
   --define project_name=my_pipeline \
   --define ProjectName=MyPipeline \
+  --define PROJECT_NAME=MY_PIPELINE \
   --define description="My data processing pipeline" \
   --define author="Your Name" \
   --define email="you@example.com" \
@@ -98,7 +99,7 @@ cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template 
   --define target_platforms="linux-x86_64,macos-arm64"
 ----
 
-This produces byte-identical output given the same inputs. All 13 template variables are:
+This produces byte-identical output given the same inputs. All 14 template variables are:
 
 [cols="2,1,2"]
 |===
@@ -107,6 +108,7 @@ This produces byte-identical output given the same inputs. All 13 template varia
 |`project-name` |string |(required, via `--name`)
 |`project_name` |string |(required)
 |`ProjectName` |string |(required)
+|`PROJECT_NAME` |string |(required)
 |`description` |string |(required)
 |`author` |string |`Anonymous`
 |`email` |string |`dev@example.com`
@@ -131,6 +133,7 @@ cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template 
   --name ref-pipeline \
   --define project_name=ref_pipeline \
   --define ProjectName=RefPipeline \
+  --define PROJECT_NAME=REF_PIPELINE \
   --define description="Reference pipeline for verification" \
   --define author="Test" \
   --define email="test@example.com" \

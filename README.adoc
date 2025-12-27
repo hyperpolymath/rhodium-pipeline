@@ -82,6 +82,7 @@ cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template 
   --name my-pipeline \
   --define project_name=my_pipeline \
   --define ProjectName=MyPipeline \
+  --define PROJECT_NAME=MY_PIPELINE \
   --define description="My data processing pipeline" \
   --define author="Your Name" \
   --define email="you@example.com" \
@@ -117,6 +118,11 @@ See link:docs/QUICKSTART.adoc[QUICKSTART.adoc] for the full variable reference.
 |string
 |PascalCase for Isabelle theories
 |`VAEDataset`
+
+|`PROJECT_NAME`
+|string
+|SCREAMING_SNAKE_CASE for env vars
+|`VAE_DATASET`
 
 |`description`
 |string
@@ -237,7 +243,7 @@ Generated projects inherit Palimpsest v0.8 layered on your choice of:
 * MIT License
 * AGPL-3.0 License
 
-See link:LICENSE[LICENSE] and link:docs/LICENSING.adoc[LICENSING.adoc] for details.
+See link:LICENSE.txt[LICENSE.txt] and link:docs/LICENSING.adoc[LICENSING.adoc] for details.
 
 == Reference Implementation
 

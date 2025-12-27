@@ -627,7 +627,7 @@ pub struct RunArgs {
     #[arg(
         long = "checksum",
         value_enum,
-        default_value = "shake256",
+        default_value = "{{ checksum_algo }}",
         env = "{{ PROJECT_NAME }}_CHECKSUM",
         help = "Checksum algorithm"
     )]
@@ -911,7 +911,7 @@ pub enum ChecksumAction {
         paths: Vec<PathBuf>,
 
         /// Algorithm
-        #[arg(short, long, value_enum, default_value = "shake256")]
+        #[arg(short, long, value_enum, default_value = "{{ checksum_algo }}")]
         algorithm: ChecksumAlgorithm,
 
         /// Output format
@@ -953,7 +953,7 @@ pub enum ChecksumAction {
         path2: PathBuf,
 
         /// Algorithm
-        #[arg(short, long, value_enum, default_value = "shake256")]
+        #[arg(short, long, value_enum, default_value = "{{ checksum_algo }}")]
         algorithm: ChecksumAlgorithm,
     },
 }

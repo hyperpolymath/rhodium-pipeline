@@ -32,5 +32,6 @@ Polymath, H. (2025). _rhodium-pipeline_ [Computer software]. GitHub. https://git
 
 == See Also
 
-* link:../CITATION.cff[CITATION.cff]
-* link:../codemeta.json[codemeta.json]
+* link:../CITATION.cff[CITATION.cff] — Citation File Format (machine-readable)
+* link:../codemeta.json[codemeta.json] — CodeMeta software metadata
+* link:../DUBLINCORE.xml[DUBLINCORE.xml] — Dublin Core metadata
