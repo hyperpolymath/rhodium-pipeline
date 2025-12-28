@@ -21,8 +21,8 @@ project := "{{ project-name }}"
 version := `cargo pkgid | cut -d# -f2 | cut -d@ -f2`
 
 # Toolchain versions
-rust_version := "1.80.0"
-isabelle_version := "latest"
+rust_version := "{{ min_rust_version }}"
+isabelle_version := "{{ isabelle_version }}"
 nickel_version := `nickel --version 2>/dev/null | head -1 || echo "not installed"`
 guile_version := `guile --version 2>/dev/null | head -1 || echo "not installed"`
 

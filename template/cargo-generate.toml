@@ -17,6 +17,11 @@ type = "string"
 prompt = "Type name (PascalCase, for Isabelle theories)?"
 regex = "^[A-Z][a-zA-Z0-9]*$"
 
+[placeholders.PROJECT_NAME]
+type = "string"
+prompt = "Environment variable prefix (SCREAMING_SNAKE_CASE)?"
+regex = "^[A-Z][A-Z0-9_]*$"
+
 [placeholders.description]
 type = "string"
 prompt = "One-line project description?"
