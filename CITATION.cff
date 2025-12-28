@@ -12,8 +12,7 @@ authors:
     email: enquiries@joshuajewell.dev
     orcid: https://orcid.org/0000-0000-0000-0000
 repository-code: https://github.com/hyperpolymath/rhodium-pipeline
-repository-artifact: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
-url: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+url: https://github.com/hyperpolymath/rhodium-pipeline
 abstract: >-
   A cargo-generate template for formally-verified data processing
   pipelines using the Rhodium Standard Repositories (RSR) methodology.
@@ -33,11 +32,8 @@ version: 1.0.0
 date-released: 2025-01-01
 identifiers:
   - type: url
-    value: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
-    description: Primary GitLab repository
-  - type: url
     value: https://github.com/hyperpolymath/rhodium-pipeline
-    description: GitHub mirror
+    description: Primary repository (GitHub)
 references:
   - type: software
     title: Isabelle/HOL

@@ -45,7 +45,7 @@ Pick one:
 #### 1.3 Create Template Structure
 
 ```
-rhodium-pipeline-template/
+rhodium-pipeline/
 ├── template/                          # The actual template
 │   ├── cargo-generate.toml            # Template config
 │   ├── {{project-name}}/
@@ -241,7 +241,7 @@ A new user should be able to:
 
 ```bash
 # Install template
-cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+cargo generate --git https://github.com/hyperpolymath/rhodium-pipeline
 
 # Answer prompts
 # Project name: my-pipeline

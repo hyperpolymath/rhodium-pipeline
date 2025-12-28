@@ -72,7 +72,7 @@ Ensure these tools are installed:
 [source,bash]
 ----
 # Generate from template (prompts for each variable)
-cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+cargo generate --git https://github.com/hyperpolymath/rhodium-pipeline
 ----
 
 === Deterministic Mode (Reproducible)
@@ -81,7 +81,7 @@ For CI/CD, scripting, or reproducible builds, specify all variables on the comma
 
 [source,bash]
 ----
-cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+cargo generate --git https://github.com/hyperpolymath/rhodium-pipeline \
   --name my-pipeline \
   --define project_name=my_pipeline \
   --define ProjectName=MyPipeline \
@@ -129,7 +129,7 @@ Generate a reference pipeline to verify the template compiles and tests pass:
 [source,bash]
 ----
 # Generate the reference project with fixed values
-cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+cargo generate --git https://github.com/hyperpolymath/rhodium-pipeline \
   --name ref-pipeline \
   --define project_name=ref_pipeline \
   --define ProjectName=RefPipeline \
@@ -478,8 +478,8 @@ cargo build -v
 
 == Getting Help
 
-* Template repository: https://gitlab.com/hyperpolymath/rhodium-pipeline-template
-* Reference implementation: https://gitlab.com/hyperpolymath/zerostep
+* Template repository: https://github.com/hyperpolymath/rhodium-pipeline
+* Reference implementation: https://github.com/hyperpolymath/zerostep
 * Isabelle documentation: https://isabelle.in.tum.de/documentation.html
 * Nickel documentation: https://nickel-lang.org/user-manual/
 
