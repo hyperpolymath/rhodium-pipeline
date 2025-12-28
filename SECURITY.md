@@ -92,7 +92,7 @@ We gratefully acknowledge security researchers who report vulnerabilities respon
 
 Security advisories are published via:
 
-- The project's [GitHub Security Advisories](https://github.com/hyperpolymath/rhodium-pipeline-template/security/advisories) page
+- The project's [GitHub Security Advisories](https://github.com/hyperpolymath/rhodium-pipeline/security/advisories) page
 - Release notes for affected versions
 
 ## Security-Related Configuration

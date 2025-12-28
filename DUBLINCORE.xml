@@ -34,12 +34,9 @@
   <dc:date>2025-01-01</dc:date>
   <dc:type>Software</dc:type>
   <dc:format>text/plain</dc:format>
-  <dc:identifier>https://gitlab.com/hyperpolymath/rhodium-pipeline-template</dc:identifier>
-  <dc:source>https://gitlab.com/hyperpolymath/rhodium-pipeline-template</dc:source>
+  <dc:identifier>https://github.com/hyperpolymath/rhodium-pipeline</dc:identifier>
+  <dc:source>https://github.com/hyperpolymath/rhodium-pipeline</dc:source>
   <dc:language>en</dc:language>
-
-  <dc:relation>https://github.com/hyperpolymath/rhodium-pipeline</dc:relation>
-  <dc:relation>https://gitlab.com/hyperpolymath/zerostep</dc:relation>
 
   <dc:coverage>Global</dc:coverage>
   <dc:rights>MIT OR AGPL-3.0-or-later</dc:rights>
@@ -60,7 +57,7 @@
 
   <dcterms:bibliographicCitation>
     hyperpolymath. (2025). Rhodium Pipeline Template (Version 1.0.0)
-    [Computer software]. https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+    [Computer software]. https://github.com/hyperpolymath/rhodium-pipeline
   </dcterms:bibliographicCitation>
 
   <dcterms:created>2024-01-01</dcterms:created>

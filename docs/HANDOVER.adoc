@@ -19,7 +19,7 @@ toc::[]
 |Field |Value
 
 |*Name*
-|`rhodium-pipeline-template`
+|`rhodium-pipeline`
 
 |*Type*
 |Project template / cargo-generate
@@ -28,7 +28,7 @@ toc::[]
 |v1.0.0 — Production Ready
 
 |*Origin*
-|Extracted from https://gitlab.com/hyperpolymath/zerostep[zerostep]
+|Extracted from https://github.com/hyperpolymath/zerostep[zerostep]
 
 |*License*
 |Palimpsest 0.8 + User choice (MIT \| AGPL-3.0)
@@ -743,7 +743,7 @@ pre-commit                # Pre-commit checks
 
 == Reference Implementation
 
-https://gitlab.com/hyperpolymath/zerostep[*zerostep*] is the canonical first implementation:
+https://github.com/hyperpolymath/zerostep[*zerostep*] is the canonical first implementation:
 
 * Living documentation of the methodology
 * Reference for all patterns

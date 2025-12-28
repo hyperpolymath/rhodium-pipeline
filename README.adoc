@@ -70,7 +70,7 @@ ____
 [source,bash]
 ----
 cargo install cargo-generate  # if needed
-cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template
+cargo generate --git https://github.com/hyperpolymath/rhodium-pipeline
 cd my-pipeline && just check-deps && just full
 ----
 
@@ -78,7 +78,7 @@ cd my-pipeline && just check-deps && just full
 
 [source,bash]
 ----
-cargo generate --git https://gitlab.com/hyperpolymath/rhodium-pipeline-template \
+cargo generate --git https://github.com/hyperpolymath/rhodium-pipeline \
   --name my-pipeline \
   --define project_name=my_pipeline \
   --define ProjectName=MyPipeline \
@@ -247,7 +247,7 @@ See link:LICENSE.txt[LICENSE.txt] and link:docs/LICENSING.adoc[LICENSING.adoc] f
 
 == Reference Implementation
 
-https://gitlab.com/hyperpolymath/zerostep[zerostep] — VAE dataset normalizer built using this methodology.
+https://github.com/hyperpolymath/zerostep[zerostep] — VAE dataset normalizer built using this methodology.
 
 == Contributing
 

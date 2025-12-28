@@ -73,8 +73,8 @@ Enhancement suggestions are welcome! Please:
 [source,bash]
 ----
 # Clone the repository
-git clone https://gitlab.com/hyperpolymath/rhodium-pipeline-template.git
-cd rhodium-pipeline-template
+git clone https://github.com/hyperpolymath/rhodium-pipeline.git
+cd rhodium-pipeline
 
 # Install dependencies
 cargo install cargo-generate just nickel-lang-cli
