@@ -1,12 +1,3 @@
----
-name: Documentation
-about: Report unclear, missing, or incorrect documentation
-title: "[DOCS]: "
-labels: 'documentation, priority: unset, triage'
-assignees: ''
-
----
-
 name: Documentation
 description: Report unclear, missing, or incorrect documentation
 title: "[Docs]: "
