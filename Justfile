@@ -1,7 +1,10 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
 # rhodium-pipeline-template - Development Tasks
 #
+# IMPORTANT: This file MUST be named "Justfile" (capital J) for RSR compliance.
+#
 # Recipes for developing and testing the template itself.
-# For generated project recipes, see the template justfile.
+# For generated project recipes, see the template Justfile.
 #
 set shell := ["bash", "-uc"]
 set dotenv-load := true
