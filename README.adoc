@@ -143,8 +143,8 @@ See link:docs/QUICKSTART.adoc[QUICKSTART.adoc] for the full variable reference.
 
 |`license`
 |choice
-|Base license (MIT or AGPL-3.0)
-|`AGPL-3.0`
+|Base license (MIT or PMPL-1.0)
+|`PMPL-1.0`
 
 |`include_julia`
 |bool
